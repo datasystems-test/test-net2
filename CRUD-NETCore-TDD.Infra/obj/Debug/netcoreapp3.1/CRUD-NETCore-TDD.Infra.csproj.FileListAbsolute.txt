@@ -1,0 +1,9 @@
+C:\Users\BRAYAN CASTILLO\source\repos\CRUD-NETCore-TDD\CRUD-NETCore-TDD.Infra\bin\Debug\netcoreapp3.1\CRUD-NETCore-TDD.Infra.deps.json
+C:\Users\BRAYAN CASTILLO\source\repos\CRUD-NETCore-TDD\CRUD-NETCore-TDD.Infra\bin\Debug\netcoreapp3.1\CRUD-NETCore-TDD.Infra.dll
+C:\Users\BRAYAN CASTILLO\source\repos\CRUD-NETCore-TDD\CRUD-NETCore-TDD.Infra\bin\Debug\netcoreapp3.1\CRUD-NETCore-TDD.Infra.pdb
+C:\Users\BRAYAN CASTILLO\source\repos\CRUD-NETCore-TDD\CRUD-NETCore-TDD.Infra\obj\Debug\netcoreapp3.1\CRUD-NETCore-TDD.Infra.csprojAssemblyReference.cache
+C:\Users\BRAYAN CASTILLO\source\repos\CRUD-NETCore-TDD\CRUD-NETCore-TDD.Infra\obj\Debug\netcoreapp3.1\CRUD-NETCore-TDD.Infra.AssemblyInfoInputs.cache
+C:\Users\BRAYAN CASTILLO\source\repos\CRUD-NETCore-TDD\CRUD-NETCore-TDD.Infra\obj\Debug\netcoreapp3.1\CRUD-NETCore-TDD.Infra.AssemblyInfo.cs
+C:\Users\BRAYAN CASTILLO\source\repos\CRUD-NETCore-TDD\CRUD-NETCore-TDD.Infra\obj\Debug\netcoreapp3.1\CRUD-NETCore-TDD.Infra.csproj.CoreCompileInputs.cache
+C:\Users\BRAYAN CASTILLO\source\repos\CRUD-NETCore-TDD\CRUD-NETCore-TDD.Infra\obj\Debug\netcoreapp3.1\CRUD-NETCore-TDD.Infra.dll
+C:\Users\BRAYAN CASTILLO\source\repos\CRUD-NETCore-TDD\CRUD-NETCore-TDD.Infra\obj\Debug\netcoreapp3.1\CRUD-NETCore-TDD.Infra.pdb
