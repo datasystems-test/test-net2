@@ -41,10 +41,11 @@ pipeline {
 
     stage('Publish'){
       steps{
+	   bat 
 	        echo '**********************************************************************************'  
 	        echo '*************             Core Services Build Done                   *************'	
 	        echo '**********************************************************************************' 			
-	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
+	         '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
               dotnet publish CRUD-NETCore-TDD.sln'''
 	        echo '**********************************************************************************' 
    
