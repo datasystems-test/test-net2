@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Build'){
       steps{ 
-        bat "dotnet Build configuration: 'Release', sdk: 'Build .NET SDK', workDirectory: 'C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net'"
+       bat "dotnet build ${workspace}\\CRUD-NETCore-TDD.sln --configuration Release"
       }
     }
 
