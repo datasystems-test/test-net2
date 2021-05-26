@@ -34,7 +34,9 @@ pipeline {
 		}
 	stage('Integration') {
 			steps{
-				junit 'unit_tests.xml'
+			'''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\\CRUD-NETCore-TDD.Test\\TestResults\\"
+              junit 'unit_tests.xml''''
+			
 			}
 		}
     stage('Publish'){
