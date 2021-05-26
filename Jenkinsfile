@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Build'){
       steps{ 
-       bat "dotnet build ${workspace}\\CRUD-NETCore-TDD.sln --configuration Release"
+       bat "msbuild.exe ${workspace}\\CRUD-NETCore-TDD.sln --configuration Release"
       }
     }
 
