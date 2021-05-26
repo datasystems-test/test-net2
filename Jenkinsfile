@@ -19,6 +19,9 @@ pipeline {
     }
     stage('XDP Core Services Build') {
             steps{
+			echo '**********************************************************************************'  
+	        echo '*************               XDP Core Services Buil                   *************'	
+	        echo '**********************************************************************************' 
               bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
               dotnet build CRUD-NETCore-TDD.sln'''
               echo 'Core Services Build Done' 
@@ -27,6 +30,9 @@ pipeline {
 
      stage('XDS Delivery Service Unit Test') {
                 steps{
+			echo '**********************************************************************************'  
+	        echo '*************             XDS Delivery Service Unit Test             *************'	
+	        echo '**********************************************************************************' 	
                 bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\CRUD-NETCore-TDD.Test\\"
                 dotnet test -v n --no-build CRUD-NETCore-TDD.Test.csproj --logger \\"trx;LogFileName=TestResult.xml\\"'''
                 echo 'XDS Service Unit Test Done'  
@@ -35,9 +41,12 @@ pipeline {
 
     stage('Publish'){
       steps{
+	        echo '**********************************************************************************'  
+	        echo '*************             Core Services Build Done                   *************'	
+	        echo '**********************************************************************************' 			
 	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
               dotnet publish CRUD-NETCore-TDD.sln'''
-              echo 'Core Services Build Done' 
+	        echo '**********************************************************************************' 
    
       }
     }
