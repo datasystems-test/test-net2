@@ -34,7 +34,7 @@ pipeline {
 		}
 	stage('Integration') {
 			steps{
-			 junit ${workspace}\\unit_tests.xml\\
+			 junit '${workspace}\\unit_tests.xml'
 			
 			
 			}
