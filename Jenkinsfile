@@ -28,17 +28,20 @@ pipeline {
      stage('XDS Delivery Service Unit Test') {
                 steps{
                 bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\CRUD-NETCore-TDD.Test\\"
-                dotnet test -v n --no-build CRUD-NETCore-TDD.Test.csproj --logger \\"trx;LogFileName=unit_tests.xml\\"'''
+                dotnet test -v n --no-build CRUD-NETCore-TDD.Test.csproj --logger \\"trx;LogFileName=TestResult.xml\\"'''
                 echo 'XDS Service Unit Test Done'  
             }
 		}
+		
 	stage('Integration') {
-			steps{
-			junit 'unit_tests.xml'
+		always {
+		xunit testTimeMargin: '5000', thresholdMode: 1, thresholds: [], tools: [ReportType(deleteOutputFiles: true, failIfNotNew: false, pattern: '..\\TestResult.xml', skipNoTestFiles: false, stopProcessingIfError: false)]
+
 			
 			
 			}
 		}
+		
     stage('Publish'){
       steps{
 	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
