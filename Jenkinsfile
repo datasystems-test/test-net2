@@ -32,11 +32,13 @@ pipeline {
                 echo 'XDS Service Unit Test Done'  
             }
 		}
-	post {
-      always {
-        junit '**/reports/junit/*.xml'
-      }
-   } 
+	stage('Integration') {
+			steps{
+			 junit ${workspace}\\unit_tests.xml\\
+			
+			
+			}
+		}
     stage('Publish'){
       steps{
 	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
