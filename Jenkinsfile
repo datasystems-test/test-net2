@@ -28,7 +28,7 @@ pipeline {
      stage('XDS Delivery Service Unit Test') {
                 steps{
                 bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\CRUD-NETCore-TDD.Test\\"
-                dotnet test -v n --no-build CRUD-NETCore-TDD.Test.csproj'''
+                dotnet test -v n --no-build CRUD-NETCore-TDD.Test.csproj --logger \\"trx;LogFileName=unit_tests.xml\\"'''
                 echo 'XDS Service Unit Test Done'  
             }
 		}
