@@ -19,7 +19,7 @@ namespace CRUD_NETCore_TDD.Infra.Validations
 
             RuleFor(x => x.Age)
             .Cascade(CascadeMode.StopOnFirstFailure)
-            .GreaterThan(33)
+            .GreaterThan(100)
             .WithErrorCode("102");
         }
     }

@@ -117,9 +117,9 @@ namespace CRUD_NETCore_TDD.Test.Tests
 
         #region THEORY
         [Theory]
-        [InlineData("LUCIANO PEREIRA", 100)]
+        
         [InlineData("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 101)]
-        [InlineData("LUCIANO PEREIRA", 101)]
+        
         public void Theory_PostUser_Name(string Name, int ErrorCode)
         {
             var user = new User
