@@ -34,7 +34,7 @@ pipeline {
 		}
 	stage('Integration') {
 			steps{
-			 junit '**\\CRUD-NETCore-TDD.Test\\TestResults*.xml'
+			 junit '"\\CRUD-NETCore-TDD.Test\\TestResults\\unit_tests.xml\\"'
 			
 			
 			}
