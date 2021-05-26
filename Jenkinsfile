@@ -33,7 +33,7 @@ pipeline {
             }
 		}
 		
-	stage('Integration') {
+	post{
 		always {
 		xunit testTimeMargin: '5000', thresholdMode: 1, thresholds: [], tools: [ReportType(deleteOutputFiles: true, failIfNotNew: false, pattern: '..\\TestResult.xml', skipNoTestFiles: false, stopProcessingIfError: false)]
 
