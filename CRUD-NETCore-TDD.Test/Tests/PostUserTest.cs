@@ -46,7 +46,7 @@ namespace CRUD_NETCore_TDD.Test.Tests
         public void Fact_PostUser_NoValidation()
         {
             // EXAMPLE
-            var user = new User(0, "LUCIANO PEREIRA", 33, true);
+            var user = new User(0, "alfred jons", 15, true);
 
             // REPOSITORY
             user = new UserRepository(ctx).Post(user);
@@ -117,6 +117,8 @@ namespace CRUD_NETCore_TDD.Test.Tests
 
         #region THEORY
         [Theory]
+        [InlineData(null, 100)]
+        [InlineData("", 100)]
         
         [InlineData("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 101)]
         
@@ -130,8 +132,8 @@ namespace CRUD_NETCore_TDD.Test.Tests
         }
 
         [Theory]
-        [InlineData(33, 102)]
-        [InlineData(33, 102)]
+        [InlineData(0, 102)]
+        [InlineData(-1, 102)]
         [InlineData(33, 102)]
         public void Theory_PostUser_Age(int Age, int ErrorCode)
         {
