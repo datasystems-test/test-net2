@@ -32,6 +32,14 @@ pipeline {
                 echo 'XDS Service Unit Test Done'  
             }
 		}
+    stage('Publish'){
+      steps{
+	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
+              dotnet publish CRUD-NETCore-TDD.sln'''
+              echo 'Core Services Build Done' 
+   
+      }
+    }		
 
   }
 
