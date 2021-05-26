@@ -64,7 +64,8 @@ namespace CRUD_NETCore_TDD.Test.Tests
             var val = new PostUserValidator().Validate(user);
 
             // ASSERT
-            Assert.True(val.IsValid);
+            //Assert.True(val.IsValid);
+            Assert.False(val.IsValid);
 
             if (val.IsValid)
             {
