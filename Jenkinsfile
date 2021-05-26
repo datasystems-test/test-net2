@@ -32,13 +32,11 @@ pipeline {
                 echo 'XDS Service Unit Test Done'  
             }
 		}
-	stage('Integration') {
-			steps{
-			 junit '"\\CRUD-NETCore-TDD.Test\\TestResults\\unit_tests.xml\\"'
-			
-			
-			}
-		}
+	post {
+      always {
+        junit '**/reports/junit/*.xml'
+      }
+   } 
     stage('Publish'){
       steps{
 	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
