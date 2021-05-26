@@ -36,7 +36,7 @@ namespace CRUD_NETCore_TDD.Test.Tests
         protected void CheckError<T>(AbstractValidator<T> validator, int ErrorCode, T vm)
         {
             var val = validator.Validate(vm);
-            Assert.True(val.IsValid);
+            Assert.False(val.IsValid);
 
             if (!val.IsValid)
             {
