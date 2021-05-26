@@ -33,8 +33,10 @@ pipeline {
             }
 		}
 	stage('Integration') {
-  junit 'unit_tests.xml'
+			steps{
+				junit 'unit_tests.xml'
 			}
+		}
     stage('Publish'){
       steps{
 	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
