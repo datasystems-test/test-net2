@@ -33,14 +33,6 @@ pipeline {
             }
 		}
 		
-	post{
-		always {
-		xunit testTimeMargin: '5000', thresholdMode: 1, thresholds: [], tools: [ReportType(deleteOutputFiles: true, failIfNotNew: false, pattern: '..\\TestResult.xml', skipNoTestFiles: false, stopProcessingIfError: false)]
-
-			
-			
-			}
-		}
 		
     stage('Publish'){
       steps{
@@ -49,7 +41,15 @@ pipeline {
               echo 'Core Services Build Done' 
    
       }
-    }		
+    }
+	 post {
+                always {
+                    xunit (
+                        thresholds: [$class: 'FailedThreshold', unstableThreshold: '1'],
+                        tools: [$class: 'MSTest', pattern: '*.xml']
+                    )
+                }
+            }	
 
   }
 
