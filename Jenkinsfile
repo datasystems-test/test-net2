@@ -33,7 +33,7 @@ pipeline {
             }
 		}
 
-    stage('Publish'){
+    stage('Publish test'){
      step([$class: 'MSTestPublisher', testResultsFile:"**/*.xml", failOnError: true, keepLongStdio: true])
     }		
 		
