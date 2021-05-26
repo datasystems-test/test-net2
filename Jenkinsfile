@@ -35,17 +35,17 @@ pipeline {
 	        echo '**********************************************************************************' 	
                 bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\CRUD-NETCore-TDD.Test\\"
                 dotnet test -v n --no-build CRUD-NETCore-TDD.Test.csproj --logger \\"trx;LogFileName=TestResult.xml\\"'''
-                echo 'XDS Service Unit Test Done'  
+                echo 'XDS Service Unit Test Done'
+			echo '**********************************************************************************'  
+	        echo '*************             Core Services Build Done                   *************'	
+	        echo '**********************************************************************************' 				
             }
 		}
 
     stage('Publish'){
       steps{
-	   bat 
-	        echo '**********************************************************************************'  
-	        echo '*************             Core Services Build Done                   *************'	
-	        echo '**********************************************************************************' 			
-	         '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
+	     		
+	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
               dotnet publish CRUD-NETCore-TDD.sln'''
 	        echo '**********************************************************************************' 
    
