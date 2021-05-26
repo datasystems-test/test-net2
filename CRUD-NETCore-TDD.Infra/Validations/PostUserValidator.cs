@@ -14,7 +14,7 @@ namespace CRUD_NETCore_TDD.Infra.Validations
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
                 .WithErrorCode("100")
-                .MaximumLength(20)
+                .MaximumLength(80)
                 .WithErrorCode("101");
 
             RuleFor(x => x.Age)
