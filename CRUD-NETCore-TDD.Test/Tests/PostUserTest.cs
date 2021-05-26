@@ -120,7 +120,7 @@ namespace CRUD_NETCore_TDD.Test.Tests
         [InlineData(null, 100)]
         [InlineData("", 100)]
         
-        [InlineData("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 101)]
+       // [InlineData("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 101)]
         
         public void Theory_PostUser_Name(string Name, int ErrorCode)
         {
