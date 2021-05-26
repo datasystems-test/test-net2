@@ -130,8 +130,8 @@ namespace CRUD_NETCore_TDD.Test.Tests
         }
 
         [Theory]
-        [InlineData(20, 102)]
-        [InlineData(34, 102)]
+        [InlineData(33, 102)]
+        [InlineData(33, 102)]
         [InlineData(33, 102)]
         public void Theory_PostUser_Age(int Age, int ErrorCode)
         {
