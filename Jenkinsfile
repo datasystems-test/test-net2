@@ -17,22 +17,9 @@ pipeline {
         git credentialsId: '8b729564-ae78-40b1-b5c9-4545949c1485', url: 'https://github.com/datasystems-test/test-net2.git', branch: 'main'
       }
     }
-
-    stage('Restore packages') {
-      steps {
-        bat "dotnet restore ${workspace}\\CRUD-NETCore-TDD.sln"
-      }
-    }
-
-    stage('Clean'){
-      steps{
-        bat "dotnet clean ${workspace}\\CRUD-NETCore-TDD.sln"
-      }
-    }
-
     stage('Build'){
       steps{ 
-        bat "dotnet build ${workspace}\\CRUD-NETCore-TDD.sln--configuration Release"
+        bat "dotnetBuild configuration: 'Release', sdk: 'Build .NET SDK', workDirectory: 'C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net'"
       }
     }
 
