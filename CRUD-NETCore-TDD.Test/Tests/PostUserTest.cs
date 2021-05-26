@@ -64,8 +64,7 @@ namespace CRUD_NETCore_TDD.Test.Tests
             var val = new PostUserValidator().Validate(user);
 
             // ASSERT
-            //Assert.True(val.IsValid);
-            Assert.False(val.IsValid);
+            Assert.True(val.IsValid);
 
             if (val.IsValid)
             {
@@ -120,9 +119,9 @@ namespace CRUD_NETCore_TDD.Test.Tests
         [Theory]
         [InlineData(null, 100)]
         [InlineData("", 100)]
-        [InlineData("LUCIANO PEREIRA",101)]
-        // [InlineData("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 101)]
-
+        
+       // [InlineData("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 101)]
+        
         public void Theory_PostUser_Name(string Name, int ErrorCode)
         {
             var user = new User
