@@ -36,12 +36,12 @@ namespace CRUD_NETCore_TDD.Test.Tests
         protected void CheckError<T>(AbstractValidator<T> validator, int ErrorCode, T vm)
         {
             var val = validator.Validate(vm);
-            Assert.False(val.IsValid);
+            Assert.true(val.IsValid);
 
             if (!val.IsValid)
             {
                 bool hasError = val.Errors.Any(a => a.ErrorCode.Equals(ErrorCode.ToString()));
-                Assert.True(hasError);
+                Assert.true(hasError);
             }
         }
     }
