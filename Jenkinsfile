@@ -33,11 +33,6 @@ pipeline {
             }
 		}
 
-    stage('Publish test'){
-     step{[$class: 'MSTestPublisher', testResultsFile:"**/*.xml", failOnError: true, keepLongStdio: true])
-    }		
-	}	
-
     stage('Publish'){
       steps{
 	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
