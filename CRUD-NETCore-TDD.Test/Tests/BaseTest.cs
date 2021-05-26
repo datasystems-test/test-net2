@@ -41,7 +41,7 @@ namespace CRUD_NETCore_TDD.Test.Tests
             if (!val.IsValid)
             {
                 bool hasError = val.Errors.Any(a => a.ErrorCode.Equals(ErrorCode.ToString()));
-                Assert.True(hasError);
+                Assert.False(hasError);
             }
         }
     }
