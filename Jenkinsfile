@@ -32,8 +32,12 @@ pipeline {
                 echo 'XDS Service Unit Test Done'  
             }
 		}
+
+    stage('Publish'){
+     step([$class: 'MSTestPublisher', testResultsFile:"**/*.xml", failOnError: true, keepLongStdio: true])
+    }		
 		
-		
+
     stage('Publish'){
       steps{
 	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
@@ -42,14 +46,7 @@ pipeline {
    
       }
     }
-	 post {
-                always {
-                    xunit (
-                        thresholds: [$class: 'FailedThreshold', unstableThreshold: '1'],
-                        tools: [$class: 'MSTest', pattern: '*.xml']
-                    )
-                }
-            }	
+	 
 
   }
 
