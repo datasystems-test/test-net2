@@ -117,8 +117,6 @@ namespace CRUD_NETCore_TDD.Test.Tests
 
         #region THEORY
         [Theory]
-        [InlineData(null, 100)]
-        [InlineData("", 100)]
         [InlineData("LUCIANO PEREIRA", 100)]
         [InlineData("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 101)]
         [InlineData("LUCIANO PEREIRA", 101)]
@@ -132,8 +130,8 @@ namespace CRUD_NETCore_TDD.Test.Tests
         }
 
         [Theory]
-        [InlineData(0, 102)]
-        [InlineData(-1, 102)]
+        [InlineData(20, 102)]
+        [InlineData(34, 102)]
         [InlineData(33, 102)]
         public void Theory_PostUser_Age(int Age, int ErrorCode)
         {
