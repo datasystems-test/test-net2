@@ -62,4 +62,4 @@ post {
             junit 'build/reports/**/*.xml'
         }
     }
-}
+
