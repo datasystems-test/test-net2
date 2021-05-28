@@ -52,13 +52,14 @@ pipeline {
    
       }
     }
+	stage('resultados de la pruebas'){
+      steps{
+		      step ([$class: 'MSTestPublisher', testResultsFile:"**/TestResults/TestResult.trx", failOnError: true, keepLongStdio: true])
+      }
+    }
 
   }
- post {
-    always {
-      step ([$class: 'MSTestPublisher', testResultsFile:"**/TestResults/TestResult.trx", failOnError: true, keepLongStdio: true])
-    }
-  }
+ 
 }
 
 
