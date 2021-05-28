@@ -55,7 +55,7 @@ pipeline {
   }
 post {
         always {
-            junit testResults: '**CRUD-NETCore-TDD.Test\TestResults\*.xml', allowEmptyResults: false
+            junit testResults: '**\\CRUD-NETCore-TDD.Test\\TestResults\\TestResult.xml', allowEmptyResults: false
         }
     }
 
