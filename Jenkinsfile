@@ -55,7 +55,7 @@ pipeline {
   }
 post {
         always {
-            junit testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: false
+            junit testResults: '**CRUD-NETCore-TDD.Test\TestResults\*.xml', allowEmptyResults: false
         }
     }
 
