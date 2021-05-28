@@ -51,17 +51,15 @@ pipeline {
    
       }
     }
-	
-    stage('Tests result'){
-      steps{
-		step([$class: 'MSTestPublisher', testResultsFile:"**/TestResult.xml", failOnError: true, keepLongStdio: true]
-	       
-   
-      }
-    }	 
 
   }
 
+}
+
+post { 
+    always {
+         nunit testResultsPattern: 'TestResult.xml'
+    }
 }
 
 
