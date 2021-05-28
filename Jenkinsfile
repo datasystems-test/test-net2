@@ -59,13 +59,6 @@ pipeline {
       step ([$class: 'MSTestPublisher', testResultsFile:"**/TestResults/TestResult.trx", failOnError: true, keepLongStdio: true])
     }
   }
-  tools {
-    msbuild '.NET Core 2.2.103'
-  }
-  environment {
-    ASPNETCORE_ENVIRONMENT = 'Production'
-  }
-
 }
 
 
