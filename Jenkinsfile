@@ -51,15 +51,21 @@ pipeline {
    
       }
     }
-	 
+	
+    stage('Publish'){
+      steps{
+			echo '**********************************************************************************'  
+	        echo '*************             Core Services Build Done                   *************'	
+	        echo '**********************************************************************************' 		     		
+	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\CRUD-NETCore-TDD.Test\\TestResults"
+              junit 'TestResult.xml''''
+	        echo '**********************************************************************************' 
+   
+      }
+    }	 
 
   }
 
 }
 
-post {
-        always {
-            junit 'build/reports/**/*.xml'
-        }
-    }
 
