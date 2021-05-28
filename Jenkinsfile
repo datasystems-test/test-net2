@@ -56,10 +56,7 @@ pipeline {
   }
 post {
         always {
-            vstestPublisher(
-                testResultsPattern: 'TestResults/*.trx',
-                currentBuild: currentBuild
-            )
+            mstest testResultsFile:"**/*.trx", keepLongStdio: true
         }
     }
 
