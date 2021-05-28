@@ -51,7 +51,7 @@ pipeline {
    
       }
     }
-stage('Integration') {
+stage('RESULT TEST') {
 		junit 'TestResult.xml'
 	}
 
