@@ -55,12 +55,13 @@ pipeline {
     stage('Tests result'){
       steps{
 			echo '**********************************************************************************'  
-	        echo '*************             Core Services Build Done                   *************'	
+	        echo '*************             Test result                   *************'	
 	        echo '**********************************************************************************' 		     		
 	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\CRUD-NETCore-TDD.Test\\TestResults"
              '''
+			  echo '**********************************************************************************' 
 			 step([$class: 'MSTestPublisher', testResultsFile:"**/TestResult.xml", failOnError: true, keepLongStdio: true]
-	        echo '**********************************************************************************' 
+	       
    
       }
     }	 
