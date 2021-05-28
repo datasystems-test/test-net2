@@ -34,7 +34,7 @@ pipeline {
 	        echo '*************             XDS Delivery Service Unit Test             *************'	
 	        echo '**********************************************************************************' 	
                 bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\CRUD-NETCore-TDD.Test\\"
-                dotnet test -v n --no-build CRUD-NETCore-TDD.Test.csproj --logger \\"trx;LogFileName=TestResult.xml\\"'''
+                dotnet test -v n --no-build CRUD-NETCore-TDD.Test.csproj --logger \\"trx;LogFileName=TestResult.trx\\"'''
                 echo 'XDS Service Unit Test Done'
 			
             }
@@ -55,7 +55,7 @@ pipeline {
   }
 post {
         always {
-            junit testResults: '**\\CRUD-NETCore-TDD.Test\\TestResults\\TestResult.xml', allowEmptyResults: false
+            junit testResults: '**\\CRUD-NETCore-TDD.Test\\TestResults\\TestResult.trx', allowEmptyResults: false
         }
     }
 
