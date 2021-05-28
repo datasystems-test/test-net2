@@ -58,7 +58,8 @@ pipeline {
 	        echo '*************             Core Services Build Done                   *************'	
 	        echo '**********************************************************************************' 		     		
 	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\CRUD-NETCore-TDD.Test\\TestResults"
-              step([$class: 'MSTestPublisher', testResultsFile:"**/TestResult.xml", failOnError: true, keepLongStdio: true]'''
+             '''
+			 step([$class: 'MSTestPublisher', testResultsFile:"**/TestResult.xml", failOnError: true, keepLongStdio: true]
 	        echo '**********************************************************************************' 
    
       }
