@@ -57,7 +57,7 @@ pipeline {
 post {
         always {
             vstestPublisher(
-                testResultsPattern: 'TestResults\*.trx',
+                testResultsPattern: 'TestResults/*.trx',
                 currentBuild: currentBuild
             )
         }
