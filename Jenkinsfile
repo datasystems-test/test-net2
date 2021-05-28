@@ -51,13 +51,13 @@ pipeline {
    
       }
     }
-stage('RESULT TEST') {
-	steps{
-		junit 'TestResult.xml'
-	}
-	}
 
   }
+post {
+        always {
+            junit testResults: '**/target/surefire-reports/*.xml', allowEmptyResults: false
+        }
+    }
 
 }
 
