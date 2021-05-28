@@ -58,7 +58,7 @@ pipeline {
 	        echo '*************             Core Services Build Done                   *************'	
 	        echo '**********************************************************************************' 		     		
 	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\CRUD-NETCore-TDD.Test\\TestResults"
-              junit 'TestResult.xml''''
+              junit "TestResult.xml"'''
 	        echo '**********************************************************************************' 
    
       }
