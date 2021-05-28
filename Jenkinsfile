@@ -58,7 +58,7 @@ pipeline {
 
 post { 
     always {
-         nunit testResultsPattern: 'TestResult.xml'
+        junit 'TestResult.xml'
     }
 }
 
