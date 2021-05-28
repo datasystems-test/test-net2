@@ -52,7 +52,7 @@ pipeline {
       }
     }
 	
-    stage('Publish'){
+    stage('Tests result'){
       steps{
 			echo '**********************************************************************************'  
 	        echo '*************             Core Services Build Done                   *************'	
