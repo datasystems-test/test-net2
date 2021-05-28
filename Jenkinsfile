@@ -52,7 +52,7 @@ pipeline {
       }
     }
 stage('Integration') {
-		junit 'test-results.xml'
+		junit 'TestResult.xml'
 	}
 
 
