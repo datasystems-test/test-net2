@@ -40,6 +40,11 @@ pipeline {
 			
             }
 		}
+	stage('Build report Unit Test results'){
+		steps{
+		      step ([$class: 'MSTestPublisher', testResultsFile:"**/TestResults/TestResult.trx", failOnError: true, keepLongStdio: true])
+		}
+    }
 
     stage('Publish'){
       steps{
@@ -52,12 +57,7 @@ pipeline {
    
       }
     }
-	stage('resultados de la pruebas'){
-      steps{
-		      step ([$class: 'MSTestPublisher', testResultsFile:"**/TestResults/TestResult.trx", failOnError: true, keepLongStdio: true])
-      }
-    }
-
+	
   }
  
 }
