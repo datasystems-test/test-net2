@@ -54,7 +54,7 @@ pipeline {
 stage('RESULT TEST') {
 	steps{
 		junit 'TestResult.xml'
-		S
+	}
 	}
 
   }
