@@ -46,7 +46,7 @@ namespace CRUD_NETCore_TDD.Test.Tests
         public void Fact_PostUser_NoValidation()
         {
             // EXAMPLE
-            var user = new User(0, "alfred jons", 15, true);
+            var user = new User(1, "PABLO SALMON", 20, true);
 
             // REPOSITORY
             user = new UserRepository(ctx).Post(user);
@@ -59,13 +59,12 @@ namespace CRUD_NETCore_TDD.Test.Tests
         public void Fact_PostUser()
         {
             // EXAMPLE
-            var user = new User(0, "LUCIANO PEREIRA", 33, true);
+            var user = new User(1, "LUCIANO PEREIRA", 33, true);
 
             var val = new PostUserValidator().Validate(user);
 
             // ASSERT
-            //Assert.True(val.IsValid);
-            Assert.False(val.IsValid);
+            Assert.True(val.IsValid);
 
             if (val.IsValid)
             {
@@ -73,7 +72,7 @@ namespace CRUD_NETCore_TDD.Test.Tests
                 user = new UserRepository(ctx).Post(user);
 
                 // ASSERT
-                Assert.Equal(1, user.Id);
+                Assert.Equal(1, user.Id);///1
             }
         }
         #endregion
@@ -118,11 +117,10 @@ namespace CRUD_NETCore_TDD.Test.Tests
 
         #region THEORY
         [Theory]
-        [InlineData(null, 100)]
-        [InlineData("", 100)]
-        
-       // [InlineData("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 101)]
-        
+        [InlineData("PABLO SALMON", 101)]//LUCIANO PEREIRA
+        [InlineData("MCdonal", 101)]//ABCDEFGHIJKLMNOPQRSTUVWXYZ MCdonal
+        [InlineData("LUCIANO PEREIRA", 101)]//,101
+        [InlineData("12345678901234567890123456789012345678901234567890123456789012", 100)]//,101
         public void Theory_PostUser_Name(string Name, int ErrorCode)
         {
             var user = new User
@@ -133,9 +131,9 @@ namespace CRUD_NETCore_TDD.Test.Tests
         }
 
         [Theory]
-        [InlineData(0, 102)]
-        [InlineData(-1, 102)]
-        [InlineData(33, 102)]
+        [InlineData(35, 102)]//-1,102
+        [InlineData(40, 102)]//0,102
+        [InlineData(16, 102)]//33,102
         public void Theory_PostUser_Age(int Age, int ErrorCode)
         {
             var user = new User
