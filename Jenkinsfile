@@ -19,7 +19,7 @@ pipeline {
     }
     stage('XDP Core Services Build') {
        steps{ 
-        bat dotnet build "${workspace}\\CRUD-NETCore-TDD.sln\\" --configuration Release
+        bat "dotnet build ${workspace}\\CRUD-NETCore-TDD.sln\\ --configuration Release"
       }
 		}
 
