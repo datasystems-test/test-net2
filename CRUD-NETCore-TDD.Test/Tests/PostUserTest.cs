@@ -117,10 +117,10 @@ namespace CRUD_NETCore_TDD.Test.Tests
 
         #region THEORY
         [Theory]
-        [InlineData("PABLO SALMON", 101)]//LUCIANO PEREIRA
-        [InlineData("MCdonal", 101)]//ABCDEFGHIJKLMNOPQRSTUVWXYZ MCdonal
+        [InlineData("", 101)]//LUCIANO PEREIRA
+        
         [InlineData("LUCIANO PEREIRA", 101)]//,101
-        [InlineData("12345678901234567890123456789012345678901234567890123456789012", 100)]//,101
+       
         public void Theory_PostUser_Name(string Name, int ErrorCode)
         {
             var user = new User
@@ -131,9 +131,9 @@ namespace CRUD_NETCore_TDD.Test.Tests
         }
 
         [Theory]
-        [InlineData(35, 102)]//-1,102
-        [InlineData(40, 102)]//0,102
-        [InlineData(16, 102)]//33,102
+        [InlineData(33, 102)]//-1,102
+       // [InlineData(0, 102)]//0,102
+        //[InlineData(0, 102)]//33,102
         public void Theory_PostUser_Age(int Age, int ErrorCode)
         {
             var user = new User

@@ -14,12 +14,12 @@ namespace CRUD_NETCore_TDD.Infra.Validations
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .NotEmpty()
                 .WithErrorCode("100")
-                .MaximumLength(80)
+                .MaximumLength(20)//20
                 .WithErrorCode("101");
 
             RuleFor(x => x.Age)
             .Cascade(CascadeMode.StopOnFirstFailure)
-            .GreaterThan(100)
+            .GreaterThan(0)//0
             .WithErrorCode("102");
         }
     }
