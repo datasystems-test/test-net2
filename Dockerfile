@@ -1,5 +1,5 @@
 # use a node base image
-FROM node:7-onbuild
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
 
 # set maintainer
 LABEL maintainer "dlcgetzemani@gmail.com"
