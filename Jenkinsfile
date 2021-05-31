@@ -1,10 +1,12 @@
 pipeline {
   
-  agent any
+     agent {
+        docker { image 'node:14-alpine' }
+    }
    environment {
         dotnet ='C:\\Program Files\\dotnet\\'
+		
         }
-
   stages {
     stage ('Clean workspace') {
       steps {
@@ -57,7 +59,7 @@ pipeline {
    
       }
     }
-	
+		
   }
  
 }
