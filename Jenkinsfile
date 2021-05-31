@@ -23,7 +23,7 @@ pipeline {
 	        echo '*************               XDP Core Services Buil                   *************'	
 	        echo '**********************************************************************************' 
               bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
-              dotnet build CRUD-NETCore-TDD.sln'''
+              dotnet build CRUD-NETCore-TDD.sln --configuration Release'''
               echo 'Core Services Build Done' 
             }
 		}
@@ -52,21 +52,12 @@ pipeline {
 	        echo '*************             Core Services Build Done                   *************'	
 	        echo '**********************************************************************************' 		     		
 	   bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
-              dotnet publish CRUD-NETCore-TDD.sln'''
+              dotnet publish CRUD-NETCore-TDD.sln -c Release'''
 	        echo '**********************************************************************************' 
    
       }
     }
-    stage('docker'){
-      steps{
-			echo '**********************************************************************************'  
-	        echo '*************             Core Services Build Done                   *************'	
-	        echo '**********************************************************************************' 		     		
-	   bat  'docker build -t aspnetapp .'
-   
-      }
-    }
-		
+   		
   }
  
 }
