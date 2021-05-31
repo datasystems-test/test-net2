@@ -23,7 +23,7 @@ pipeline {
 	        echo '*************               XDP Core Services Buil                   *************'	
 	        echo '**********************************************************************************' 
               bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
-              dotnet build CRUD-NETCore-TDD.sln --configuration Release'''
+              dotnet build CRUD-NETCore-TDD.sln'''
               echo 'Core Services Build Done' 
             }
 		}
