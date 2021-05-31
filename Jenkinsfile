@@ -28,23 +28,19 @@ pipeline {
             }
 		}
 
-     stage('XDS Delivery Service Unit Test') {
+     stage('XDS Delivery Service Unit Test & Build report Unit Test results') {
                 steps{
 			echo '**********************************************************************************'  
 	        echo '*************             XDS Delivery Service Unit Test             *************'	
 	        echo '**********************************************************************************' 	
                 bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\CRUD-NETCore-TDD.Test\\"
                 dotnet test -v n --no-build CRUD-NETCore-TDD.Test.csproj --logger \\"trx;LogFileName=TestResult.trx\\"'''
-				
+			 step ([$class: 'MSTestPublisher', testResultsFile:"**/TestResults/TestResult.trx", failOnError: true, keepLongStdio: true])	
                 echo 'XDS Service Unit Test Done'
 			
             }
 		}
-	stage('Build report Unit Test results'){
-		steps{
-		      step ([$class: 'MSTestPublisher', testResultsFile:"**/TestResults/TestResult.trx", failOnError: true, keepLongStdio: true])
-		}
-    }
+
 
     stage('Publish'){
       steps{
