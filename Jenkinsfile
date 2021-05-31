@@ -1,8 +1,6 @@
 pipeline {
   
-     agent {
-        docker { image 'mcr.microsoft.com/dotnet/aspnet:5.0' }
-    }
+     agent any
    environment {
         dotnet ='C:\\Program Files\\dotnet\\'
 		
