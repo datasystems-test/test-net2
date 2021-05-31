@@ -6,7 +6,7 @@ using Xunit;
 using CRUD_NETCore_TDD.Infra.Repositories;
 using CRUD_NETCore_TDD.Infra.Validations;
 using System.Linq;
-
+ 
 namespace CRUD_NETCore_TDD.Test.Tests
 {
     public class PostUserTest: BaseTest

@@ -7,7 +7,7 @@ using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
-
+ 
 namespace CRUD_NETCore_TDD.Test.Tests
 {
     public class BaseTest
