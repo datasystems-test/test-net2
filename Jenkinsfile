@@ -18,14 +18,9 @@ pipeline {
       }
     }
     stage('XDP Core Services Build') {
-            steps{
-			echo '**********************************************************************************'  
-	        echo '*************               XDP Core Services Buil                   *************'	
-	        echo '**********************************************************************************' 
-              bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
-              dotnet build CRUD-NETCore-TDD.sln'''
-              echo 'Core Services Build Done' 
-            }
+       steps{ 
+        bat "dotnet build ${workspace}\\CRUD-NETCore-TDD.sln --configuration Release"
+      }
 		}
 
      stage('XDS Delivery Service Unit Test') {
