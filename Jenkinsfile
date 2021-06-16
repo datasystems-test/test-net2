@@ -24,7 +24,7 @@ pipeline {
 	        echo '**********************************************************************************' 
               bat  '''cd "C:\\Users\\AF-0094\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PIPeline .net\\"
               dotnet build CRUD-NETCore-TDD.sln'''
-              echo 'Core Services Build Done' 
+              echo 'Core Services Build Donee' 
             }
 		}
 
